@@ -114,111 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', createMobileMenu);
 });
 
-// Photo Gallery Management
-const photoGallery = {
-    // Array to store photo data - easy to add more photos here
-    photos: [
-        { src: './media/1.jpg', caption: 'Séance de dressage individuelle' },
-        //{ src: './media/2.jpg', caption: 'Formation d\'obéissance de base' },
-        { src: './media/3.jpg', caption: 'Équipe professionnelle à l\'œuvre' },
-        { src: './media/4.jpg', caption: '' },
-        { src: './media/5.jpg', caption: '' },
-        { src: './media/6.jpg', caption: 'Socialisation entre chiens' },
-        { src: './media/7.jpg', caption: '' },
-        { src: './media/8.jpg', caption: 'Nos installations modernes' },
-        { src: './media/9.jpg', caption: 'Chiens en pension - aire de jeu' },
-        { src: './media/10.jpg', caption: '' },
-        { src: './media/11.jpg', caption: 'Nos installations modernes' },
-        //{ src: './media/12.jpg', caption: 'Socialisation entre chiens' },
-        { src: './media/13.jpg', caption: 'Séance de dressage individuelle' },
-        { src: './media/14.jpg', caption: 'Formation d\'obéissance de base' },
-        // Add more photos here easily:
-        // { src: './media/photo7.jpg', caption: 'Description de la photo' },
-    ],
-    
-    init() {
-        this.createPhotoGrid();
-        this.setupModal();
-    },
-    
-    createPhotoGrid() {
-        const photoGrid = document.getElementById('photoGrid');
-        if (!photoGrid) return;
-        
-        this.photos.forEach((photo, index) => {
-            const photoItem = document.createElement('div');
-            photoItem.className = 'photo-item';
-            photoItem.innerHTML = `
-                <img src="${photo.src}" alt="${photo.caption}" loading="lazy">
-                <div class="photo-caption">${photo.caption}</div>
-            `;
-            
-            // Add click event to open modal
-            photoItem.addEventListener('click', () => {
-                this.openModal(photo.src, photo.caption);
-            });
-            
-            photoGrid.appendChild(photoItem);
-        });
-    },
-    
-    setupModal() {
-        const modal = document.getElementById('photoModal');
-        const modalClose = document.getElementById('modalClose');
-        
-        // Close modal when clicking close button
-        modalClose.addEventListener('click', () => {
-            this.closeModal();
-        });
-        
-        // Close modal when clicking outside the image
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                this.closeModal();
-            }
-        });
-        
-        // Close modal with ESC key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                this.closeModal();
-            }
-        });
-    },
-    
-    openModal(src, caption) {
-        const modal = document.getElementById('photoModal');
-        const modalImage = document.getElementById('modalImage');
-        const modalCaption = document.getElementById('modalCaption');
-        
-        modalImage.src = src;
-        modalImage.alt = caption;
-        modalCaption.textContent = caption;
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
-    },
-    
-    closeModal() {
-        const modal = document.getElementById('photoModal');
-        modal.classList.remove('active');
-        document.body.style.overflow = ''; // Restore scrolling
-    },
-    
-    // Method to easily add new photos programmatically
-    addPhoto(src, caption) {
-        this.photos.push({ src, caption });
-        this.refreshGallery();
-    },
-    
-    refreshGallery() {
-        const photoGrid = document.getElementById('photoGrid');
-        if (photoGrid) {
-            photoGrid.innerHTML = '';
-            this.createPhotoGrid();
-        }
-    }
-};
-
 // Form validation and contact functionality
 function validatePhoneNumber(phone) {
     const phoneRegex = /^[0-9\s\-\+\(\)]+$/;
@@ -227,9 +122,6 @@ function validatePhoneNumber(phone) {
 
 // Add some interactive features
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize photo gallery
-    photoGallery.init();
-    
     // Add hover effects to gallery items
     const galleryItems = document.querySelectorAll('.gallery-item');
     galleryItems.forEach(item => {
