@@ -628,3 +628,14 @@ body {
         flex-direction: column;
     }
 }
+/* adding Tiktok */
+.social-links a[href*="tiktok"]:hover {
+    color: #fe2c55;
+}
+.tiktok-btn {
+    background-color: #fe2c55;
+}
+
+.tiktok-btn:hover {
+    background-color: #e01e46;
+}
