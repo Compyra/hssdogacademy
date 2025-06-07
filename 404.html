@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page non trouvée - HSS Dog Academy</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #dc2626;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --dark-gray: #6b7280;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+        }
+
+        .error-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .logo-text span {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: bounce 2s infinite;
+        }
+
+        .error-message {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .error-description {
+            font-size: 1rem;
+            color: var(--dark-gray);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .dog-icon {
+            font-size: 4rem;
+            color: var(--secondary-color);
+            margin: 1rem 0;
+            animation: wag 1s ease-in-out infinite alternate;
+        }
+
+        .redirect-info {
+            background-color: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .countdown {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .redirect-text {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        .home-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .home-btn:hover {
+            background-color: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+        }
+
+        .paw-prints {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            opacity: 0.1;
+            font-size: 2rem;
+            color: var(--secondary-color);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .paw-prints:nth-child(2) {
+            top: 60%;
+            right: 10%;
+            left: auto;
+            animation-delay: -2s;
+        }
+
+        .paw-prints:nth-child(3) {
+            top: 40%;
+            left: 80%;
+            animation-delay: -4s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes wag {
+            0% {
+                transform: rotate(-10deg);
+            }
+            100% {
+                transform: rotate(10deg);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .error-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .error-code {
+                font-size: 6rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 2rem;
+            }
+            
+            .error-message {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="paw-prints">🐾</div>
+    <div class="paw-prints">🐾</div>
+    <div class="paw-prints">🐾</div>
+
+    <div class="error-container">
+        <div class="logo">
+            <img src="./logo.jpg" alt="HSS Dog Academy Logo" class="logo-img">
+            <div class="logo-text">
+                <h1>HSS</h1>
+                <span>Dog Academy</span>
+            </div>
+        </div>
+
+        <div class="error-code">404</div>
+        
+        <div class="dog-icon">
+            <i class="fas fa-dog"></i>
+        </div>
+
+        <h2 class="error-message">Oups! Page non trouvée</h2>
+        
+        <p class="error-description">
+            Il semblerait que cette page se soit échappée comme un chien sans laisse!<br>
+            Ne vous inquiétez pas, nous allons vous ramener à la maison.
+        </p>
+
+        <div class="redirect-info">
+            <div class="countdown" id="countdown">Redirection dans 5 secondes...</div>
+            <div class="redirect-text">
+                Vous serez automatiquement redirigé vers notre page d'accueil
+            </div>
+        </div>
+
+        <a href="./index.html" class="home-btn">
+            <i class="fas fa-home"></i>
+            Retour à l'accueil
+        </a>
+    </div>
+
+    <script>
+        // Countdown and redirect functionality
+        let countdown = 5;
+        const countdownElement = document.getElementById('countdown');
+        
+        function updateCountdown() {
+            if (countdown > 0) {
+                countdownElement.textContent = `Redirection dans ${countdown} seconde${countdown > 1 ? 's' : ''}...`;
+                countdown--;
+            } else {
+                countdownElement.textContent = 'Redirection en cours...';
+                window.location.href = './index.html';
+            }
+        }
+        
+        // Update countdown every second
+        const timer = setInterval(updateCountdown, 1000);
+        
+        // Clear timer if user navigates away
+        window.addEventListener('beforeunload', () => {
+            clearInterval(timer);
+        });
+        
+        // Optional: Add click anywhere to redirect immediately
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.home-btn')) {
+                clearInterval(timer);
+                window.location.href = './index.html';
+            }
+        });
+    </script>
+</body>
+</html>
